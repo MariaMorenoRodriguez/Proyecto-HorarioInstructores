@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lista Personas</title>
+    </h:head>
+    <h:body>
+        <h1>Personas</h1>        
+
+        <h:dataTable var="p" value="#{beanPerson.listPerson}" cellpadding="8" border="1">
+            <h:column>
+                <f:facet name="header"> 
+                    <h:outputLabel value="Número ID"/>
+                </f:facet>
+                <h:outputText value="#{p.idPerson}"/>
+            </h:column> 
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Nombre"/>                                
+                </f:facet>
+                <h:outputText value="#{p.personNameVarchar}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Dirección"/>                
+                </f:facet>
+                <h:outputText value="#{p.address}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Localidad"/>
+                </f:facet>
+                <h:outputText value="#{p.locality.nameLocality}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Barrio"/>
+                </f:facet>
+                <h:outputText value="#{p.neigborhood}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Correo Electronico"/>
+                </f:facet>
+                <h:outputText value="#{p.email}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Teléfono"/>                
+                </f:facet>
+                <h:outputText value="#{p.phone.phonenumber}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header"> 
+                    <h:outputLabel value="Nombre de Usuario"/>
+                </f:facet>
+                <h:outputText value="#{p.userp.idUser}"/>
+            </h:column>
+        </h:dataTable>
+        <br></br>
+        <h:form>
+            <h:commandButton action="CrearPersonas" value="Agregar Persona"/>
+        </h:form>
+    </h:body>
+</html>
+

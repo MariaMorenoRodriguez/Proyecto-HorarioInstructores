@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-oct-2017 10:10:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="iss.Model.Locality" table="locality" catalog="projectiss" optimistic-lock="version">
+        <id name="idLocality" type="java.lang.Long">
+            <column name="IdLocality" />
+            <generator class="identity" />
+        </id>
+        <property name="nameLocality" type="string">
+            <column name="NameLocality" length="55" not-null="true" unique="true" />
+        </property>
+        <set name="persons" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkLocality" not-null="true" />
+            </key>
+            <one-to-many class="iss.Model.Person" />
+        </set>
+        <set name="institutes" table="institute" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkLocatity" not-null="true" />
+            </key>
+            <one-to-many class="iss.Model.Institute" />
+        </set>
+    </class>
+</hibernate-mapping>

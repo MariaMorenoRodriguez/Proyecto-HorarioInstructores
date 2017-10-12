@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="ProjectISS"/>
+  <table-filter match-name="groupp"/>
+  <table-filter match-name="state"/>
+  <table-filter match-name="userp"/>
+  <table-filter match-name="typespaceformation"/>
+  <table-filter match-name="phone"/>
+  <table-filter match-name="institute"/>
+  <table-filter match-name="locality"/>
+  <table-filter match-name="activitytype"/>
+  <table-filter match-name="typetrainingprogram"/>
+  <table-filter match-name="typegroup"/>
+  <table-filter match-name="programming"/>
+  <table-filter match-name="trainingprogram"/>
+  <table-filter match-name="rol"/>
+  <table-filter match-name="neigborhood"/>
+  <table-filter match-name="spaceformation"/>
+  <table-filter match-name="workingday"/>
+  <table-filter match-name="areasena"/>
+  <table-filter match-name="person"/>
+</hibernate-reverse-engineering>

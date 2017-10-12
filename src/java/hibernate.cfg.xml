@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ProjectISS?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="iss/Model/Programming.hbm.xml"/>
+    <mapping resource="iss/Model/Typespaceformation.hbm.xml"/>
+    <mapping resource="iss/Model/Rol.hbm.xml"/>
+    <mapping resource="iss/Model/State.hbm.xml"/>
+    <mapping resource="iss/Model/Institute.hbm.xml"/>
+    <mapping resource="iss/Model/Person.hbm.xml"/>
+    <mapping resource="iss/Model/Phone.hbm.xml"/>
+    <mapping resource="iss/Model/Workingday.hbm.xml"/>
+    <mapping resource="iss/Model/Spaceformation.hbm.xml"/>
+    <mapping resource="iss/Model/Typegroup.hbm.xml"/>
+    <mapping resource="iss/Model/Typetrainingprogram.hbm.xml"/>
+    <mapping resource="iss/Model/Locality.hbm.xml"/>
+    <mapping resource="iss/Model/Areasena.hbm.xml"/>
+    <mapping resource="iss/Model/Userp.hbm.xml"/>
+    <mapping resource="iss/Model/Trainingprogram.hbm.xml"/>
+    <mapping resource="iss/Model/Neigborhood.hbm.xml"/>
+    <mapping resource="iss/Model/Activitytype.hbm.xml"/>
+    <mapping resource="iss/Model/Groupp.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

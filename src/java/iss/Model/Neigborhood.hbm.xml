@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-oct-2017 10:10:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="iss.Model.Neigborhood" table="neigborhood" catalog="projectiss" optimistic-lock="version">
+        <id name="idNeigBorhood" type="java.lang.Long">
+            <column name="IdNeigBorhood" />
+            <generator class="identity" />
+        </id>
+        <property name="nameNeigBorhood" type="string">
+            <column name="NameNeigBorhood" length="80" not-null="true" />
+        </property>
+        <set name="institutes" table="institute" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkNeigborhood" not-null="true" />
+            </key>
+            <one-to-many class="iss.Model.Institute" />
+        </set>
+    </class>
+</hibernate-mapping>

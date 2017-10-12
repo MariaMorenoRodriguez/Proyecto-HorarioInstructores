@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-oct-2017 10:10:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="iss.Model.Typegroup" table="typegroup" catalog="projectiss" optimistic-lock="version">
+        <id name="idTypeGroup" type="java.lang.Long">
+            <column name="IdTypeGroup" />
+            <generator class="identity" />
+        </id>
+        <property name="nameTypeGroup" type="string">
+            <column name="NameTypeGroup" length="45" not-null="true" unique="true" />
+        </property>
+        <set name="groupps" table="groupp" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkTypeGroup" not-null="true" />
+            </key>
+            <one-to-many class="iss.Model.Groupp" />
+        </set>
+    </class>
+</hibernate-mapping>

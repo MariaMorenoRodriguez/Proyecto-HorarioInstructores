@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-oct-2017 10:10:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="iss.Model.Person" table="person" catalog="projectiss" optimistic-lock="version">
+        <id name="idPerson" type="long">
+            <column name="IdPerson" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="locality" class="iss.Model.Locality" fetch="select">
+            <column name="fkLocality" not-null="true" />
+        </many-to-one>
+        <many-to-one name="phone" class="iss.Model.Phone" fetch="select">
+            <column name="fkPhoneNumber" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userp" class="iss.Model.Userp" fetch="select">
+            <column name="fkUserP" not-null="true" />
+        </many-to-one>
+        <property name="personNameVarchar" type="string">
+            <column name="PersonNameVarchar" length="45" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="45" not-null="true" />
+        </property>
+        <property name="neigborhood" type="string">
+            <column name="Neigborhood" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="55" not-null="true" unique="true" />
+        </property>
+        <set name="programmings" table="programming" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkPersonInstructor" not-null="true" />
+            </key>
+            <one-to-many class="iss.Model.Programming" />
+        </set>
+    </class>
+</hibernate-mapping>
